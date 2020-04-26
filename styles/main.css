@@ -1,0 +1,20 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+}
+
+.mdl-layout__header {
+  padding: .25em 0em .25em .5em;
+}
+
+.toDo {
+  padding-top: 2em;
+  padding-left: 4em;
+}
+
+.mdl-button {
+  margin-left: 23em;
+}
