@@ -4,6 +4,8 @@ function onReady() {
 
   function createNewToDo() {
     const newToDoText = document.getElementById('newToDoText');
+    if (!newToDoText.value) { return; }
+
     toDos.push({
       title: newToDoText.value,
       complete: false
@@ -15,7 +17,6 @@ function onReady() {
 
   function renderTheUI() {
     const toDoList = document.getElementById('toDoList');
-    if (!newToDoText.value) { return; }
 
     toDoList.textContent = '';
 
@@ -38,7 +39,6 @@ function onReady() {
   });
 
   renderTheUI();
-
 }
 
 window.onload = function() {
