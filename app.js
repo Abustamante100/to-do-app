@@ -27,6 +27,22 @@ function onReady(){
         const checkbox = document.createElement('input');
         checkbox.type = "checkbox";
 
+        let toDos_serialized = JSON.stringify(toDos);
+
+        checkbox.addEventListener('change', (event) => {
+           if(checkbox.checked) {
+            localStorage.setItem("storedToDos", toDos_serialized);
+            console.log (localStorage);
+            }
+         })
+
+         function getToDos () {
+           let toDos_deserialized = JSON.parse(localStorage.getItem ('storedToDos'));
+           if (toDos_deserialized !== null) {
+             location.reload;
+           }
+         };
+
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = "Delete!";
 
@@ -44,7 +60,6 @@ function onReady(){
         newLi.appendChild(checkbox);
         newLi.appendChild(deleteBtn);
      })
-
   }
 
   addToDoForm.addEventListener('submit', event => {
